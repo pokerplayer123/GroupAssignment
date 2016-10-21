@@ -68,18 +68,18 @@
             android:ems="10"
             android:id="@+id/passwordField" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/label_password_confirm"
-            android:textSize="18sp" />
-
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
             android:id="@+id/passwordConfirmField" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_password_confirm"
+            android:textSize="18sp" />
     </GridLayout>
 
     <Button
