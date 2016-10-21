@@ -32,7 +32,15 @@
                 <activity
                     android:name=".RegistrationActivity"
                     android:label="@string/activity_registration"
-                    android:screenOrientation="portrait" />
+                    android:screenOrientation="portrait">
+                    </activity>
+
+                    <activity
+                        android:name=".HomeActivity"
+                        android:label="@string/activity_home"
+                        android:screenOrientation="portrait">
+                    </activity>
+
 
     </application>
 

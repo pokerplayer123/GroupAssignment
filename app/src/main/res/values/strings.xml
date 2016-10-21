@@ -3,6 +3,7 @@
     <string name="title_activity_login">Sign in</string>
     <string name="activity_registration">Account Registration</string>
     <string name="activity_login">Account Login</string>
+    <string name="activity_home">Welcome</string>
     <!-- text labels -->
     <string name="label_name">Name:</string>
     <string name="label_email">Email address:</string>
