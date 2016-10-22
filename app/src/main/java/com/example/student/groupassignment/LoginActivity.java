@@ -125,6 +125,9 @@ public class LoginActivity extends AppCompatActivity {
             public void handleResponse(BackendlessUser loggedInUser) {
                 super.handleResponse(loggedInUser);
                 Toast.makeText(LoginActivity.this, String.format(getString(R.string.info_logged_in), loggedInUser.getObjectId()), Toast.LENGTH_LONG).show();
+                Intent HomeActivity = new Intent( LoginActivity.this, HomeActivity.class);
+                startActivity(HomeActivity);
+                finish();
             }
         };
     }
