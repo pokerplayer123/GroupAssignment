@@ -1,10 +1,12 @@
-package com.example.student.groupassignment;
+package com.example.student.groupassignment.Backendless;
 
 import android.app.ProgressDialog;
 import android.content.Context;
 
 import com.backendless.async.callback.AsyncCallback;
 import com.backendless.exceptions.BackendlessFault;
+import com.example.student.groupassignment.Backendless.DialogHelper;
+import com.example.student.groupassignment.R;
 
 /**
  * A callback, which has ability to show loading dialog while response is being received.

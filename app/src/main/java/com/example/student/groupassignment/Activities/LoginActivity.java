@@ -1,4 +1,4 @@
-package com.example.student.groupassignment;
+package com.example.student.groupassignment.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +16,10 @@ import android.widget.Toast;
 import com.backendless.Backendless;
 import com.backendless.BackendlessUser;
 import com.backendless.async.callback.AsyncCallback;
+import com.example.student.groupassignment.Backendless.BackendSettings;
+import com.example.student.groupassignment.Backendless.LoadingCallback;
+import com.example.student.groupassignment.R;
+import com.example.student.groupassignment.Backendless.Validator;
 
 /**
  * Created by Aaron on 21/10/2016.
@@ -125,7 +129,7 @@ public class LoginActivity extends AppCompatActivity {
             public void handleResponse(BackendlessUser loggedInUser) {
                 super.handleResponse(loggedInUser);
                 Toast.makeText(LoginActivity.this, String.format(getString(R.string.info_logged_in), loggedInUser.getObjectId()), Toast.LENGTH_LONG).show();
-                Intent HomeActivity = new Intent( LoginActivity.this, HomeActivity.class);
+                Intent HomeActivity = new Intent( LoginActivity.this, com.example.student.groupassignment.Activities.HomeActivity.class);
                 startActivity(HomeActivity);
                 finish();
             }

@@ -1,8 +1,10 @@
-package com.example.student.groupassignment;
+package com.example.student.groupassignment.Backendless;
 
 import android.content.Context;
 import android.util.Patterns;
 import android.widget.Toast;
+
+import com.example.student.groupassignment.R;
 
 /**
  * Provides static methods for different value validators.

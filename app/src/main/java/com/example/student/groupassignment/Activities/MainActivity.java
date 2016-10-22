@@ -1,10 +1,11 @@
-package com.example.student.groupassignment;
+package com.example.student.groupassignment.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.backendless.Backendless;
-import com.backendless.BackendlessUser;
+import com.example.student.groupassignment.Backendless.BackendSettings;
+import com.example.student.groupassignment.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else{
             Backendless.UserService.loggedInUser();
-               Intent HomeActivity = new Intent(this, HomeActivity.class);
+               Intent HomeActivity = new Intent(this, com.example.student.groupassignment.Activities.HomeActivity.class);
                 startActivity(HomeActivity);
             }
 

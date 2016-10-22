@@ -1,4 +1,4 @@
-package com.example.student.groupassignment;
+package com.example.student.groupassignment.Activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,6 +13,10 @@ import android.widget.Toast;
 import com.backendless.Backendless;
 import com.backendless.BackendlessUser;
 import com.backendless.async.callback.AsyncCallback;
+import com.example.student.groupassignment.Backendless.BackendSettings;
+import com.example.student.groupassignment.Backendless.LoadingCallback;
+import com.example.student.groupassignment.R;
+import com.example.student.groupassignment.Backendless.Validator;
 
 /**
  * Handles registration flow.
