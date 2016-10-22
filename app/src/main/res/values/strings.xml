@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GroupAssignment</string>
+    <string name="app_name">UNSW Tutorial Helper</string>
     <string name="title_activity_login">Sign in</string>
     <string name="activity_registration">Account Registration</string>
     <string name="activity_login">Account Login</string>
@@ -48,4 +48,10 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
+    <string-array name="Account_Type">
+        <item>Student</item>
+        <item>Tutor</item>
+    </string-array>
+    <string name ="Select_type">Select Type</string>
 </resources>

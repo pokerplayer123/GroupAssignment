@@ -6,7 +6,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    android:gravity="center_horizontal">
+    android:gravity="center_horizontal"
+    android:weightSum="1">
 
     <TextView
         android:layout_width="match_parent"
@@ -27,7 +28,8 @@
         android:columnCount="2"
         android:rowCount="4"
         android:layout_marginBottom="@dimen/view_vertical_margin"
-        android:layout_marginTop="@dimen/view_vertical_margin">
+        android:layout_marginTop="@dimen/view_vertical_margin"
+        android:layout_weight="0.05">
 
         <TextView
             android:layout_width="wrap_content"
@@ -56,7 +58,7 @@
             android:id="@+id/emailField" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="119dp"
             android:layout_height="wrap_content"
             android:text="@string/label_password"
             android:textSize="18sp" />
@@ -68,6 +70,12 @@
             android:ems="10"
             android:id="@+id/passwordField" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_password_confirm"
+            android:textSize="18sp" />
+
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -76,10 +84,19 @@
             android:id="@+id/passwordConfirmField" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:text="AccountType"
+            android:layout_width="133dp"
             android:layout_height="wrap_content"
-            android:text="@string/label_password_confirm"
+            android:id="@+id/textView5"
             android:textSize="18sp" />
+
+        <Spinner
+            android:layout_width="225dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner1"
+            android:entries="@array/Account_Type"
+            android:prompt="@string/Select_type"
+            android:spinnerMode="dropdown" />
     </GridLayout>
 
     <Button

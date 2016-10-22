@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.backendless.Backendless;
@@ -77,15 +78,17 @@ public class RegistrationActivity extends Activity
    * @param name                 user's name
    * @param email                user's email
    * @param password             user's password
+   * @param type                 user's AccountType (Student/Tutor)
    * @param registrationCallback a callback, containing actions to be executed on request result
    */
-  public void registerUser(String name, String email, String password,
+  public void registerUser(String name, String email, String password, String type,
                            AsyncCallback<BackendlessUser> registrationCallback )
   {
     BackendlessUser user = new BackendlessUser();
     user.setEmail( email );
     user.setPassword( password );
     user.setProperty( "name", name );
+    user.setProperty( "Type", type);
 
     //Backendless handles password hashing by itself, so we don't need to send hash instead of plain text
     Backendless.UserService.register( user, registrationCallback );
@@ -129,6 +132,7 @@ public class RegistrationActivity extends Activity
         EditText emailField = (EditText) findViewById( R.id.emailField );
         EditText passwordField = (EditText) findViewById( R.id.passwordField );
         EditText passwordConfirmField = (EditText) findViewById( R.id.passwordConfirmField );
+        Spinner spinner = (Spinner) findViewById( R.id.spinner1);
 
         CharSequence name = nameField.getText();
         CharSequence email = emailField.getText();
@@ -140,7 +144,7 @@ public class RegistrationActivity extends Activity
           LoadingCallback<BackendlessUser> registrationCallback = createRegistrationCallback();
 
           registrationCallback.showLoading();
-          registerUser( name.toString(), email.toString(), password.toString(), registrationCallback );
+          registerUser( name.toString(), email.toString(), password.toString(), spinner.getSelectedItem().toString(), registrationCallback );
         }
       }
     };
