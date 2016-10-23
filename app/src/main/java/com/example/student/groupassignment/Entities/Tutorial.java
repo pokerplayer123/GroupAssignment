@@ -1,4 +1,4 @@
-package com.example.student.groupassignment.Entities;
+package com.example.student.groupassignment.entities;
 
 import com.backendless.Backendless;
 import com.backendless.BackendlessCollection;

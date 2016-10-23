@@ -1,4 +1,4 @@
-package com.example.student.groupassignment.Entities;
+package com.example.student.groupassignment.entities;
 
 import com.backendless.Backendless;
 import com.backendless.BackendlessCollection;
@@ -14,7 +14,7 @@ public class Event
   private String objectId;
   private String Description;
   private java.util.Date EventTime;
-  private com.example.student.groupassignment.Entities.Tutorial Tutorial;
+  private com.example.student.groupassignment.entities.Tutorial Tutorial;
   public java.util.Date getUpdated()
   {
     return updated;
@@ -81,7 +81,7 @@ public class Event
     return Backendless.Data.of( Event.class ).save( this );
   }
 
-  public com.example.student.groupassignment.Entities.Future<Event> saveAsync()
+  public com.example.student.groupassignment.entities.Future<Event> saveAsync()
   {
     if( Backendless.isAndroid() )
     {
@@ -89,7 +89,7 @@ public class Event
     }
     else
     {
-      com.example.student.groupassignment.Entities.Future<Event> future = new Future<Event>();
+      com.example.student.groupassignment.entities.Future<Event> future = new Future<Event>();
       Backendless.Data.of( Event.class ).save( this, future );
 
       return future;
