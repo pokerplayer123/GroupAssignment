@@ -81,7 +81,7 @@ public class Event
     return Backendless.Data.of( Event.class ).save( this );
   }
 
-  public Future<Event> saveAsync()
+  public com.example.student.groupassignment.entities.Future<Event> saveAsync()
   {
     if( Backendless.isAndroid() )
     {
@@ -89,7 +89,7 @@ public class Event
     }
     else
     {
-      Future<Event> future = new Future<Event>();
+      com.example.student.groupassignment.entities.Future<Event> future = new Future<Event>();
       Backendless.Data.of( Event.class ).save( this, future );
 
       return future;
