@@ -18,6 +18,7 @@ import com.example.student.groupassignment.Backendless.LoadingCallback;
 import com.example.student.groupassignment.R;
 import com.example.student.groupassignment.adapters.EventAdapter;
 import com.example.student.groupassignment.entities.Event;
+import com.example.student.groupassignment.entities.Tutorial;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -47,11 +48,10 @@ public class HomeActivity  extends ListActivity implements View.OnClickListener 
 
 
         QueryOptions queryOptions = new QueryOptions();
-        queryOptions.setRelated( Arrays.asList( "Event"));
 
         BackendlessDataQuery query = new BackendlessDataQuery( queryOptions);
 
-        Backendless.Data.of( Event.class ).find( query, new LoadingCallback<BackendlessCollection<Event>>(this, getString( R.string.loading_events ))
+        Backendless.Persistence.of( Event.class ).find( query, new LoadingCallback<BackendlessCollection<Event>>(this, getString( R.string.loading_events ))
         {
             @Override
             public void handleResponse(BackendlessCollection<Event> eventsBackendlessCollection) {
