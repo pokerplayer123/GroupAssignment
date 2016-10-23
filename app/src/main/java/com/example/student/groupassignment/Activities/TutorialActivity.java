@@ -11,7 +11,7 @@ import com.example.student.groupassignment.R;
  * Created by Pengi on 22/10/2016.
  */
 
-public class ClassActivity extends AppCompatActivity  implements View.OnClickListener {
+public class TutorialActivity extends AppCompatActivity  implements View.OnClickListener {
     private Button addClass;
 
     @Override

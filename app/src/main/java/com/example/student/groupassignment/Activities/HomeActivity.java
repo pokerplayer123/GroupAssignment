@@ -35,7 +35,7 @@ public class HomeActivity  extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.classButton:
-                Intent ClassActivity = new Intent(this, com.example.student.groupassignment.Activities.ClassActivity.class);
+                Intent ClassActivity = new Intent(this, TutorialActivity.class);
                 startActivity(ClassActivity);
                 break;
             case R.id.studentButton:
