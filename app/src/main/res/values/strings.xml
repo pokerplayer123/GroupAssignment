@@ -54,4 +54,9 @@
         <item>Tutor</item>
     </string-array>
     <string name ="Select_type">Select Type</string>
+    <string name="Event_name">Event Name</string>
+    <string name="Event_description">Event Description</string>
+    <string name="Date_Time">Event Date/Time</string>
+    <string name="Tutorial_name">Tutorial Name</string>
+    <string name="loading_events">Loading Events...</string>
 </resources>
