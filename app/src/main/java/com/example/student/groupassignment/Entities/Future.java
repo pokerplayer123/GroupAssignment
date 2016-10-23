@@ -1,4 +1,4 @@
-package com.example.student.groupassignment.entities;
+package com.example.student.groupassignment.Entities;
 
 import com.backendless.async.callback.AsyncCallback;
 import com.backendless.exceptions.BackendlessException;

@@ -25,6 +25,6 @@ public class ClassActivity extends AppCompatActivity  implements View.OnClickLis
 
     @Override
     public void onClick(View view) {
-
+        //go to add class form activity
     }
 }
