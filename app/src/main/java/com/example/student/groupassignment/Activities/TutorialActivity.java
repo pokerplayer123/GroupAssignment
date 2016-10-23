@@ -1,5 +1,6 @@
 package com.example.student.groupassignment.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -17,7 +18,7 @@ public class TutorialActivity extends AppCompatActivity  implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_classes);
+        setContentView(R.layout.activity_tutorials);
 
         addClass.findViewById(R.id.addClass);
         addClass.setOnClickListener(this);
@@ -25,6 +26,7 @@ public class TutorialActivity extends AppCompatActivity  implements View.OnClick
 
     @Override
     public void onClick(View view) {
-        //go to add class form activity
+        Intent AddTutorialActivity = new Intent(TutorialActivity.this, AddTutorialActivity.class);
+        TutorialActivity.this.startActivity(AddTutorialActivity);
     }
 }

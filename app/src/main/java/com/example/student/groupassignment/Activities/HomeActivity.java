@@ -23,7 +23,7 @@ import java.util.List;
  * Created by Pengi on 21/10/2016.
  */
 
-public class HomeActivity  extends AppCompatActivity implements View.OnClickListener{
+public class HomeActivity  extends AppCompatActivity implements View.OnClickListener {
     private ImageButton classButton;
     private ImageButton studentButton;
     private ImageButton eventButton;
@@ -60,8 +60,8 @@ public class HomeActivity  extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.classButton:
-                Intent ClassActivity = new Intent(this, TutorialActivity.class);
-                startActivity(ClassActivity);
+                Intent ClassActivity = new Intent(HomeActivity.this, TutorialActivity.class);
+                HomeActivity.this.startActivity(ClassActivity);
                 break;
             case R.id.studentButton:
                 break;
