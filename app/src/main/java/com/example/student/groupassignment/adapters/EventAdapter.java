@@ -40,11 +40,12 @@ public class EventAdapter extends ArrayAdapter<Event> {
 
         TextView eventNameView = (TextView) view.findViewById( R.id.eventName );
         TextView descriptionView = (TextView) view.findViewById( R.id.description);
-        TextView dateTimeView = (TextView) view.findViewById( R.id.dateTime);
-        TextView tutorialView = (TextView) view.findViewById( R.id.tutorialName);
+        Event item = getItem( pos);
 
+        eventNameView.setText( item.getName() );
+        descriptionView.setText( item.getDescription());
 
-
+        return view;
 
 
     }
