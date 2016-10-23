@@ -20,7 +20,7 @@ public class TutorialActivity extends AppCompatActivity  implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorials);
 
-        addClass.findViewById(R.id.addClass);
+        addClass.findViewById(R.id.addClassButton);
         addClass.setOnClickListener(this);
     }
 
