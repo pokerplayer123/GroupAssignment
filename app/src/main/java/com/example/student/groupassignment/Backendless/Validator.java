@@ -80,4 +80,13 @@ public class Validator
 
     return true;
   }
-}
+
+  public static boolean isZIDValid(Context currentContext, CharSequence ZID) {
+    if (ZID.toString().isEmpty()) {
+      Toast.makeText(currentContext, "ZID is required", Toast.LENGTH_LONG).show();
+      return false;
+    }
+    return true;
+    }
+  }
+

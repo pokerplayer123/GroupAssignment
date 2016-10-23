@@ -26,10 +26,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:columnCount="2"
-        android:rowCount="4"
+        android:rowCount="6"
         android:layout_marginBottom="@dimen/view_vertical_margin"
         android:layout_marginTop="@dimen/view_vertical_margin"
-        android:layout_weight="0.05">
+        android:layout_weight="0.04">
 
         <TextView
             android:layout_width="wrap_content"
@@ -43,7 +43,20 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/nameField" />
-
+        <TextView
+            android:text="Z_ID"
+            android:layout_width="133dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView6"
+            android:textSize="18sp"
+            android:layout_row="5"
+            android:layout_column="0" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/ZIDConfirmField"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -82,7 +95,6 @@
             android:inputType="textPassword"
             android:ems="10"
             android:id="@+id/passwordConfirmField" />
-
         <TextView
             android:text="AccountType"
             android:layout_width="133dp"
@@ -97,6 +109,8 @@
             android:entries="@array/Account_Type"
             android:prompt="@string/Select_type"
             android:spinnerMode="dropdown" />
+
+
     </GridLayout>
 
     <Button
