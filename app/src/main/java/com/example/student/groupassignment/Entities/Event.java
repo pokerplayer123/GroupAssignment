@@ -1,10 +1,8 @@
-package com.example.student.groupassignment;
+package com.example.student.groupassignment.entities;
 
 import com.backendless.Backendless;
 import com.backendless.BackendlessCollection;
-import com.backendless.BackendlessUser;
 import com.backendless.async.callback.AsyncCallback;
-import com.backendless.geo.GeoPoint;
 import com.backendless.persistence.BackendlessDataQuery;
 
 public class Event
@@ -16,7 +14,7 @@ public class Event
   private String objectId;
   private String Description;
   private java.util.Date EventTime;
-  private Tutorial Tutorial;
+  private com.example.student.groupassignment.entities.Tutorial Tutorial;
   public java.util.Date getUpdated()
   {
     return updated;
