@@ -44,17 +44,19 @@ public class RegistrationActivity extends Activity
    *
    * @param name            user's name
    * @param email           user's email
+   * @param ZID             user's ZID
    * @param password        user's password
    * @param passwordConfirm user's password confirmation
    * @return true if all values are OK, false if something is wrong
    */
-  public boolean isRegistrationValuesValid(CharSequence name, CharSequence email, CharSequence password,
+  public boolean isRegistrationValuesValid(CharSequence name, CharSequence email, CharSequence ZID, CharSequence password,
                                            CharSequence passwordConfirm )
   {
     return Validator.isNameValid( this, name )
             && Validator.isEmailValid( this, email )
             && Validator.isPasswordValid( this, password )
-            && isPasswordsMatch( password, passwordConfirm );
+            && isPasswordsMatch( password, passwordConfirm )
+            && Validator.isZIDValid( this, ZID);
   }
 
   /**
@@ -83,9 +85,10 @@ public class RegistrationActivity extends Activity
    * @param email                user's email
    * @param password             user's password
    * @param type                 user's AccountType (Student/Tutor)
+   * @param ZID                  user's ZID
    * @param registrationCallback a callback, containing actions to be executed on request result
    */
-  public void registerUser(String name, String email, String password, String type,
+  public void registerUser(String name, String email, String ZID, String password, String type,
                            AsyncCallback<BackendlessUser> registrationCallback )
   {
     BackendlessUser user = new BackendlessUser();
@@ -93,6 +96,7 @@ public class RegistrationActivity extends Activity
     user.setPassword( password );
     user.setProperty( "name", name );
     user.setProperty( "Type", type);
+    user.setProperty( "ZID", ZID);
 
     //Backendless handles password hashing by itself, so we don't need to send hash instead of plain text
     Backendless.UserService.register( user, registrationCallback );
@@ -133,22 +137,24 @@ public class RegistrationActivity extends Activity
       public void onClick( View v )
       {
         EditText nameField = (EditText) findViewById( R.id.nameField );
+        EditText ZIDConfirmField = (EditText) findViewById( R.id.ZIDConfirmField);
         EditText emailField = (EditText) findViewById( R.id.emailField );
         EditText passwordField = (EditText) findViewById( R.id.passwordField );
         EditText passwordConfirmField = (EditText) findViewById( R.id.passwordConfirmField );
         Spinner spinner = (Spinner) findViewById( R.id.spinner1);
 
         CharSequence name = nameField.getText();
+        CharSequence ZID = ZIDConfirmField.getText();
         CharSequence email = emailField.getText();
         CharSequence password = passwordField.getText();
         CharSequence passwordConfirmation = passwordConfirmField.getText();
 
-        if( isRegistrationValuesValid( name, email, password, passwordConfirmation ) )
+        if( isRegistrationValuesValid( name, email, ZID, password, passwordConfirmation ) )
         {
           LoadingCallback<BackendlessUser> registrationCallback = createRegistrationCallback();
 
           registrationCallback.showLoading();
-          registerUser( name.toString(), email.toString(), password.toString(), spinner.getSelectedItem().toString(), registrationCallback );
+          registerUser( name.toString(), email.toString(), ZID.toString(), password.toString(), spinner.getSelectedItem().toString(), registrationCallback );
         }
       }
     };
