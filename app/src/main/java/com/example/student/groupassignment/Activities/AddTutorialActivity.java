@@ -16,6 +16,11 @@ import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
 
+import com.backendless.Backendless;
+import com.backendless.async.callback.AsyncCallback;
+
+import com.backendless.exceptions.BackendlessFault;
+import com.example.student.groupassignment.Backendless.BackendSettings;
 import com.example.student.groupassignment.R;
 import com.example.student.groupassignment.entities.Tutorial;
 
@@ -29,6 +34,9 @@ public class AddTutorialActivity  extends AppCompatActivity  implements View.OnC
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        Backendless.initApp( this, BackendSettings.app_id, BackendSettings.SECRET_KEY, BackendSettings.appVersion);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addtutorial);
         addTute = (Button) findViewById(R.id.addTuteButton);
@@ -63,6 +71,18 @@ public class AddTutorialActivity  extends AppCompatActivity  implements View.OnC
                     e.printStackTrace();
                 }
                 tute.setTime(date);
+                Backendless.Persistence.of(Tutorial.class).save(tute, new AsyncCallback<Tutorial>(){
+                    public void handleResponse( Tutorial responnse )
+                    {
+                    // new Contact instance has been saved
+                    }
+
+                    public void handleFault( BackendlessFault fault )
+                    {
+                    // an error has occurred, the error code can be retrieved with fault.getCode()
+                        fault.getCode();
+                    }
+            });
                 break;
             case R.id.startTimeField:
                 //Calendar mcurrentTime = Calendar.getInstance();
