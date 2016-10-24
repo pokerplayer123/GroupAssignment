@@ -23,46 +23,28 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:text="Tutorial:"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView16"
-                android:layout_below="@+id/activityDescText"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
                 android:ems="10"
-                android:id="@+id/activityTuteText"
-                android:layout_below="@+id/activityDescText"
-                android:layout_alignLeft="@+id/activityDescText"
-                android:layout_alignStart="@+id/activityDescText"
+                android:id="@+id/addTuteName"
+                android:layout_below="@+id/addEventDescription"
+                android:layout_alignLeft="@+id/addEventDescription"
+                android:layout_alignStart="@+id/addEventDescription"
                 android:text="Tutorial"
                 android:minLines="1"
                 android:maxLines="10"
                 android:textSize="12sp" />
-
-            <TextView
-                android:text="Created By:"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView19"
-                android:layout_below="@+id/activityTuteText"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:id="@+id/activityOwnerText"
-                android:layout_below="@+id/activityTuteText"
-                android:layout_alignLeft="@+id/activityTuteText"
-                android:layout_alignStart="@+id/activityTuteText"
+                android:layout_below="@+id/addTuteName"
+                android:layout_alignLeft="@+id/addTuteName"
+                android:layout_alignStart="@+id/addTuteName"
                 android:inputType="textMultiLine"
                 android:text="Owner"
                 android:minLines="1"
@@ -85,15 +67,6 @@
                 android:layout_toRightOf="@+id/activityOwnerText"
                 android:layout_toEndOf="@+id/activityOwnerText"
                 android:layout_width="100dp" />
-
-            <TextView
-                android:text="Description:"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView12"
-                android:layout_below="@+id/calendarView2"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
 
             <CalendarView
                 android:layout_width="wrap_content"
@@ -124,13 +97,43 @@
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
                 android:ems="10"
-                android:id="@+id/activityDescText"
+                android:id="@+id/addEventDescription"
                 android:layout_below="@+id/calendarView2"
                 android:layout_centerHorizontal="true"
                 android:text="Event Description"
                 android:minLines="1"
                 android:maxLines="10"
                 android:textSize="12sp" />
+
+            <TextView
+                android:text="Description:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView12"
+                android:layout_alignBaseline="@+id/addEventDescription"
+                android:layout_alignBottom="@+id/addEventDescription"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:text="Tutorial:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView16"
+                android:layout_alignBaseline="@+id/addTuteName"
+                android:layout_alignBottom="@+id/addTuteName"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:text="Created By:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView19"
+                android:layout_alignBaseline="@+id/activityOwnerText"
+                android:layout_alignBottom="@+id/activityOwnerText"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
 
         </RelativeLayout>
 

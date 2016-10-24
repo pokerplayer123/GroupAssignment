@@ -63,6 +63,12 @@
             android:screenOrientation="portrait">
         </activity>
 
+        <activity
+            android:name=".Activities.AddEventActivity"
+            android:label="@string/activity_home"
+            android:screenOrientation="portrait">
+        </activity>
+
 
     </application>
 

@@ -13,8 +13,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.backendless.Backendless;
-import com.backendless.BackendlessCollection;
-import com.backendless.persistence.BackendlessDataQuery;
 import com.example.student.groupassignment.R;
 import com.example.student.groupassignment.entities.Event;
 
@@ -41,8 +39,8 @@ public class EventDetailsActivity  extends AppCompatActivity implements View.OnC
         setContentView(R.layout.activity_eventdetails);
 
         title = (TextView) findViewById(R.id.eventTitle);
-        description = (EditText) findViewById(R.id.activityDescText);
-        tutorial = (EditText) findViewById(R.id.activityTuteText);
+        description = (EditText) findViewById(R.id.addEventDescription);
+        tutorial = (EditText) findViewById(R.id.addTuteName);
         owner = (EditText) findViewById(R.id.activityOwnerText);
         save = (Button) findViewById(R.id.saveEventChanges);
         delete = (Button) findViewById(R.id.deleteEventButton);
