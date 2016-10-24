@@ -92,7 +92,7 @@ public class HomeActivity  extends ListActivity implements View.OnClickListener 
                 Event activity = adapter.getItem(position);
                 Intent EventDetailsActivity = new Intent(HomeActivity.this, EventDetailsActivity.class);
                 EventDetailsActivity.putExtra("Name", activity.getName());
-                EventDetailsActivity.putExtra("Date", activity.getEventTime());
+                EventDetailsActivity.putExtra("Date", activity.getEventTime().toString());
                 EventDetailsActivity.putExtra("Description", activity.getDescription());
                 EventDetailsActivity.putExtra("Tutorial", activity.getTutorial().getTutorial());
                 EventDetailsActivity.putExtra("Owner", activity.getOwnerId());
