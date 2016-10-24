@@ -16,6 +16,8 @@ import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
 
+import com.backendless.Backendless;
+import com.example.student.groupassignment.Backendless.BackendSettings;
 import com.example.student.groupassignment.R;
 import com.example.student.groupassignment.entities.Tutorial;
 
@@ -31,6 +33,7 @@ public class AddTutorialActivity  extends AppCompatActivity  implements View.OnC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addtutorial);
+        Backendless.initApp(this, BackendSettings.app_id, BackendSettings.SECRET_KEY, BackendSettings.appVersion);
         addTute = (Button) findViewById(R.id.addTuteButton);
         startTime = (EditText) findViewById(R.id.startTimeField);
         endTime = (EditText) findViewById(R.id.endTimeField);

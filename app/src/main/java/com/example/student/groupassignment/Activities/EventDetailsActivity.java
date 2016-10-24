@@ -13,6 +13,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.backendless.Backendless;
+import com.backendless.BackendlessCollection;
+import com.backendless.async.callback.AsyncCallback;
+import com.backendless.exceptions.BackendlessFault;
+import com.backendless.persistence.BackendlessDataQuery;
+import com.backendless.persistence.QueryOptions;
+import com.example.student.groupassignment.Backendless.BackendSettings;
+import com.example.student.groupassignment.Backendless.LoadingCallback;
 import com.example.student.groupassignment.R;
 import com.example.student.groupassignment.entities.Event;
 
@@ -29,14 +36,16 @@ public class EventDetailsActivity  extends AppCompatActivity implements View.OnC
     private EditText tutorial;
     private EditText owner;
     private Button save, delete;
+    private CalendarView simpleCalendarView;
 
     private String name, aDesc, aTute, aOwner, date, id;
+    private java.util.Date eventTime;
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eventdetails);
+        Backendless.initApp( this, BackendSettings.app_id, BackendSettings.SECRET_KEY, BackendSettings.appVersion);
 
         title = (TextView) findViewById(R.id.eventTitle);
         description = (EditText) findViewById(R.id.addEventDescription);
@@ -78,11 +87,65 @@ public class EventDetailsActivity  extends AppCompatActivity implements View.OnC
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.saveEventChanges:
+                updateEvent();
+                Intent HomeActivity = new Intent(this, com.example.student.groupassignment.Activities.HomeActivity.class);
+                startActivity(HomeActivity);
                 break;
             case R.id.deleteEventButton:
-                Event curEvent = Backendless.Persistence.of( Event.class ).findById( id );
-                Long result = Backendless.Persistence.of( Event.class ).remove( curEvent );
-                break;
+                deleteEvent();
+                Intent deleteActivity = new Intent(this, com.example.student.groupassignment.Activities.HomeActivity.class);
+                startActivity(deleteActivity);
+
         }
+    }
+    public void saveEvent()
+    {
+        Event Event = new Event();
+        name = title.getText().toString();
+        aDesc = description.getText().toString();
+        Event.setName(name);
+        Event.setDescription(aDesc);
+
+        Backendless.Persistence.save(Event, new AsyncCallback<com.example.student.groupassignment.entities.Event>() {
+            @Override
+            public void handleResponse(Event response) {
+
+            }
+
+            @Override
+            public void handleFault(BackendlessFault fault) {
+
+            }
+        });
+
+    }
+
+    public void updateEvent(){
+        Event curEvent = Backendless.Persistence.of( Event.class ).findById( id );
+            name = title.getText().toString();
+            aDesc = description.getText().toString();
+            curEvent.setName(name);
+            curEvent.setDescription(aDesc);
+
+            Backendless.Persistence.save(curEvent, new AsyncCallback<com.example.student.groupassignment.entities.Event>() {
+                @Override
+                public void handleResponse(Event response) {
+
+                }
+
+                @Override
+                public void handleFault(BackendlessFault fault) {
+
+                }
+            });
+
+    }
+
+
+    public void deleteEvent()
+    {
+        Event curEvent = Backendless.Persistence.of( Event.class ).findById( id );
+        curEvent.remove();
+
     }
 }

@@ -63,4 +63,6 @@
     <string name="user_name">Name </string>
     <string name="user_email">Email </string>
     <string name="user_ZID">ZID</string>
+    <string name="delete_item">Deleting Event...</string>
+    <string name="save_item">Saving Event...</string>
 </resources>
