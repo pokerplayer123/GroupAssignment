@@ -96,6 +96,7 @@ public class HomeActivity  extends ListActivity implements View.OnClickListener 
                 EventDetailsActivity.putExtra("Description", activity.getDescription());
                 EventDetailsActivity.putExtra("Tutorial", activity.getTutorial().getTutorial());
                 EventDetailsActivity.putExtra("Owner", activity.getOwnerId());
+                EventDetailsActivity.putExtra("ObjectID", activity.getObjectId());
                 HomeActivity.this.startActivity(EventDetailsActivity);
             }
         });

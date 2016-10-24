@@ -113,7 +113,7 @@
                 android:background="@android:drawable/btn_default_small"
                 android:textColor="@android:color/background_light"
                 android:textStyle="normal|bold"
-                android:id="@+id/button4"
+                android:id="@+id/saveEventChanges"
                 android:layout_width="100dp"
                 android:layout_alignParentBottom="true"
                 android:layout_toLeftOf="@+id/deleteEventButton"
