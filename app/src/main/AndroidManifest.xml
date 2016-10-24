@@ -57,6 +57,12 @@
             
         </activity>
 
+        <activity
+            android:name=".Activities.EventDetailsActivity"
+            android:label="@string/activity_home"
+            android:screenOrientation="portrait">
+        </activity>
+
 
     </application>
 
