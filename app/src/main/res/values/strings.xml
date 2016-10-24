@@ -59,4 +59,8 @@
     <string name="Date_Time">Event Date/Time</string>
     <string name="Tutorial_name">Tutorial Name</string>
     <string name="loading_events">Loading Events...</string>
+    <string name="loading_students">Loading Students...</string>
+    <string name="user_name">Name </string>
+    <string name="user_email">Email </string>
+    <string name="user_ZID">ZID</string>
 </resources>
