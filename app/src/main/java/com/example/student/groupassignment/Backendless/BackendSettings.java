@@ -2,6 +2,7 @@ package com.example.student.groupassignment.Backendless;
 
 /**
  * Created by Aaron on 21/10/2016.
+ * The backend settings for API Call
  */
 
 public class BackendSettings {

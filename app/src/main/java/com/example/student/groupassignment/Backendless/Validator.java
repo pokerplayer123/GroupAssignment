@@ -9,6 +9,8 @@ import com.example.student.groupassignment.R;
 /**
  * Provides static methods for different value validators.
  * Shows Toasts with warnings if validation fails.
+ * Backendless login/registration was implemented based on RestaurantToGo repository provided by Backendless
+ * as a guideline to using their API and can be found here https://github.com/Backendless/RestaurantToGo
  */
 public class Validator
 {

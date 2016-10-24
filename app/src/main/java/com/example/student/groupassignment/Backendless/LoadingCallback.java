@@ -8,7 +8,8 @@ import com.backendless.exceptions.BackendlessFault;
 import com.example.student.groupassignment.Backendless.DialogHelper;
 import com.example.student.groupassignment.R;
 
-/**
+/**Backendless login/registration was implemented based on RestaurantToGo repository provided by Backendless
+ * as a guideline to using their API and can be found here https://github.com/Backendless/RestaurantToGo
  * A callback, which has ability to show loading dialog while response is being received.
  * Shows Toast with result's toString() on success.
  * Shows AlertDialog with error message on failure.
