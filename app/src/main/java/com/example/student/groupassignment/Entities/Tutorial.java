@@ -49,6 +49,10 @@ public class Tutorial
     return updated;
   }
 
+  public void setTutorial(String tutorial) {
+    Tutorial = tutorial;
+  }
+
   public String getTutorial()
   {
     return Tutorial;
