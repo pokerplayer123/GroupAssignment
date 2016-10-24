@@ -7,12 +7,12 @@ import com.backendless.persistence.BackendlessDataQuery;
 
 public class Tutorial
 {
-  private String Description;
+  public String Description;
   private String ownerId;
-  private java.util.Date Time;
+  public java.util.Date Time;
   private java.util.Date created;
   private java.util.Date updated;
-  private String Tutorial;
+  public String Tutorial;
   private String objectId;
   public String getDescription()
   {

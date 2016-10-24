@@ -38,10 +38,13 @@ public class EventAdapter extends ArrayAdapter<Event> {
 
         TextView eventNameView = (TextView) view.findViewById( R.id.eventName );
         TextView descriptionView = (TextView) view.findViewById( R.id.description);
+        TextView eventTimeView = (TextView) view.findViewById( R.id.dateTime);
         Event item = getItem( pos);
 
         eventNameView.setText( item.getName() );
         descriptionView.setText( item.getDescription());
+        eventTimeView.setText( item.getEventTime().toString());
+
 
         return view;
     }
