@@ -126,6 +126,8 @@ public class HomeActivity  extends ListActivity implements View.OnClickListener 
                 HomeActivity.this.startActivity(ClassActivity);
                 break;
             case R.id.studentButton:
+                Intent StudentListActivity = new Intent(HomeActivity.this, StudentListActivity.class);
+                HomeActivity.this.startActivity(StudentListActivity);
                 break;
             case R.id.eventButton:
                 break;
