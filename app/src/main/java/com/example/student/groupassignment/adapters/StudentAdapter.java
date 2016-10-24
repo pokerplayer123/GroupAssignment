@@ -7,59 +7,58 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.backendless.Backendless;
 import com.backendless.BackendlessUser;
 import com.example.student.groupassignment.Activities.StudentListActivity;
 import com.example.student.groupassignment.R;
-import com.example.student.groupassignment.entities.User;
+import com.example.student.groupassignment.entities.Users;
 
+import java.util.ArrayList;
 import java.util.List;
-
-import static weborb.util.ThreadContext.context;
 
 /**
  * Created by Aaron on 24/10/2016.
+ * Adapter for recycler view
  */
 
-public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHolder>{
-private List<User> studentList;
-public Context mContext;
+public class StudentAdapter extends ArrayAdapter<Users> {
 
-public static class ViewHolder extends RecylcerView.ViewHolder{
-    public TextView email, zid, name;
+private LayoutInflater mInflater;
+private int mResource;
 
-    public ViewHolder(View view) {
-        super(view);
-        email = (TextView) view.findViewById(R.id.email);
-        zid = (TextView) view.findViewById(R.id.zid);
-        name = (TextView) view.findViewById(R.id.name);
-    }
-}
+public StudentAdapter( Context context, int resource, List<Users> userList)
+        {
+        super( context, resource, userList);
+        mResource = resource;
+        mInflater = (LayoutInflater) context.getSystemService( Context.LAYOUT_INFLATER_SERVICE);
 
-    public StudentAdapter(List<User> studentList, Context context) {
-        this.studentList = studentList;
-        mContext = context;
-    }
 
-    @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_student_list, parent, false);
-        return new ViewHolder(itemView);
-    }
+        }
 
-    @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        User user = studentList.get(position);
-        holder.name.setText(user.getName());
-        holder.zid.setText(user.getZid());
-        holder.email.setText(user.getEmail());
+@Override
+public View getView( int pos, View convertView, ViewGroup parent)
+        {
+        View view = convertView == null ? mInflater.inflate( mResource, parent, false ) : convertView;
 
-    }
-    @Override
-    public int getItemCount(){return studentList.size();}
-}
+        TextView username = (TextView) view.findViewById( R.id.name );
+        TextView emailView = (TextView) view.findViewById( R.id.email);
+        TextView ZID = (TextView) view.findViewById( R.id.zid);
+        Users user = getItem( pos);
+
+        username.setText( user.getName() );
+        emailView.setText( user.getEmail());
+        ZID.setText( user.getZid());
+
+
+        return view;
+
+
+        }
+
+        }
 
 
 
