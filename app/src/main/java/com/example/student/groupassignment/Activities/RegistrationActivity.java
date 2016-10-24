@@ -20,6 +20,8 @@ import com.example.student.groupassignment.Backendless.Validator;
 
 /**
  * Handles registration flow.
+ * Backendless login/registration was implemented based on RestaurantToGo repository provided by Backendless
+ * as a guideline to using their API and can be found here https://github.com/Backendless/RestaurantToGo
  */
 public class RegistrationActivity extends Activity
 {
