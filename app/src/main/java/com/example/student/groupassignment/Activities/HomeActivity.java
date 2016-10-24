@@ -45,12 +45,11 @@ public class HomeActivity  extends ListActivity implements View.OnClickListener 
         adapter = new EventAdapter( HomeActivity.this, R.layout.list_item_event, totalEvents);
         setListAdapter( adapter );
 
-
-
+        // Query object for searching the backendless datastore to retrieve information
         QueryOptions queryOptions = new QueryOptions();
 
         BackendlessDataQuery query = new BackendlessDataQuery( queryOptions);
-
+        // Retrieve data based from the "Event" table
         Backendless.Persistence.of( Event.class ).find( query, new LoadingCallback<BackendlessCollection<Event>>(this, getString( R.string.loading_events ))
         {
             @Override
