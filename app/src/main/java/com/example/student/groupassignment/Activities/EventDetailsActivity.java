@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -19,7 +20,7 @@ import java.util.Date;
  * Created by Pengi on 24/10/2016.
  */
 
-public class EventDetailsActivity  extends AppCompatActivity {
+public class EventDetailsActivity  extends AppCompatActivity implements View.OnClickListener{
     private TextView title;
     private EditText description;
     private EditText tutorial;
@@ -61,5 +62,10 @@ public class EventDetailsActivity  extends AppCompatActivity {
         description.setText(aDesc,TextView.BufferType.EDITABLE);
         tutorial.setText(aTute,TextView.BufferType.EDITABLE);
         owner.setText(aOwner,TextView.BufferType.EDITABLE);
+    }
+
+    @Override
+    public void onClick(View v) {
+        
     }
 }

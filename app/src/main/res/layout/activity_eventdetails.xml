@@ -35,13 +35,16 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="text"
+                android:inputType="textMultiLine"
                 android:ems="10"
                 android:id="@+id/activityTuteText"
                 android:layout_below="@+id/activityDescText"
                 android:layout_alignLeft="@+id/activityDescText"
                 android:layout_alignStart="@+id/activityDescText"
-                android:text="Tutorial" />
+                android:text="Tutorial"
+                android:minLines="1"
+                android:maxLines="10"
+                android:textSize="12sp" />
 
             <TextView
                 android:text="Created By:"
@@ -60,8 +63,11 @@
                 android:layout_below="@+id/activityTuteText"
                 android:layout_alignLeft="@+id/activityTuteText"
                 android:layout_alignStart="@+id/activityTuteText"
-                android:inputType="text"
-                android:text="Owner" />
+                android:inputType="textMultiLine"
+                android:text="Owner"
+                android:minLines="1"
+                android:maxLines="10"
+                android:textSize="12sp" />
 
             <Button
                 android:text="Delete"
@@ -116,12 +122,15 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="text"
+                android:inputType="textMultiLine"
                 android:ems="10"
                 android:id="@+id/activityDescText"
                 android:layout_below="@+id/calendarView2"
                 android:layout_centerHorizontal="true"
-                android:text="Event Description" />
+                android:text="Event Description"
+                android:minLines="1"
+                android:maxLines="10"
+                android:textSize="12sp" />
 
         </RelativeLayout>
 
