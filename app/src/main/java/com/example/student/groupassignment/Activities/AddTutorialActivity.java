@@ -41,7 +41,6 @@ public class AddTutorialActivity  extends AppCompatActivity  implements View.OnC
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addtutorial);
-        Backendless.initApp(this, BackendSettings.app_id, BackendSettings.SECRET_KEY, BackendSettings.appVersion);
         addTute = (Button) findViewById(R.id.addTuteButton);
         startTime = (EditText) findViewById(R.id.startTimeField);
         endTime = (EditText) findViewById(R.id.endTimeField);

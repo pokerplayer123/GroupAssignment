@@ -2,6 +2,7 @@ package com.example.student.groupassignment.Activities;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,6 +14,9 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
 
+import com.backendless.Backendless;
+import com.backendless.async.callback.AsyncCallback;
+import com.backendless.exceptions.BackendlessFault;
 import com.example.student.groupassignment.R;
 import com.example.student.groupassignment.entities.Event;
 
@@ -38,6 +42,7 @@ public class AddEventActivity extends AppCompatActivity implements View.OnClickL
         tutorial = (EditText) findViewById(R.id.addTuteName);
         title = (EditText) findViewById(R.id.addEventTitle);
         dueDate = (EditText) findViewById(R.id.addDueDate);
+        dueDate.setText("MM/DD/YYYY");
         dueTime = (EditText) findViewById(R.id.addDueTime);
 
         add.setOnClickListener(this);
@@ -56,32 +61,56 @@ public class AddEventActivity extends AppCompatActivity implements View.OnClickL
 
         switch (view.getId()) {
             case R.id.addEventButton:
-                Event event = new Event();
-                event.setName(title.getText().toString());
-                event.setDescription(description.getText().toString());
-                //event.setTutorial(tutorial.getText().toString());
+                saveEvent();
+                Intent intent = new Intent(this, HomeActivity.class);
+                startActivity(intent);
 
-                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
-                Date date = null;
-                try {
-                    date = sdf.parse(dueDate.getText().toString() + " " + dueTime.getText().toString());
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-                event.setEventTime(date);
+
                 break;
             case R.id.addDueDate:
+                dueDate.clearComposingText();
                 break;
             case R.id.addDueTime:
+                dueTime.clearComposingText();
                 mTimePicker = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
                         dueTime.setText(selectedHour + ":" + selectedMinute);
                     }
                 }, hour, minute, true);//Yes 24 hour time
-                mTimePicker.setTitle("Select Due Time");
+                mTimePicker.setTitle("Select Due Time HH/MM");
                 mTimePicker.show();
                 break;
         }
     }
+    public void saveEvent()
+    {
+        Event Event = new Event();
+        String name = title.getText().toString();
+        String aDesc = description.getText().toString();
+        Event.setName(name);
+        Event.setDescription(aDesc);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        Date date = null;
+        try {
+            date = sdf.parse(dueDate.getText().toString() + " " + dueTime.getText().toString());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Event.setEventTime(date);
+
+        Backendless.Persistence.save(Event, new AsyncCallback<com.example.student.groupassignment.entities.Event>() {
+            @Override
+            public void handleResponse(Event response) {
+
+            }
+
+            @Override
+            public void handleFault(BackendlessFault fault) {
+
+            }
+        });
+
+    }
+
 }
