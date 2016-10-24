@@ -39,7 +39,7 @@ public class EventDetailsActivity  extends AppCompatActivity {
         owner = (EditText) findViewById(R.id.activityOwnerText);
 
         Intent intent = getIntent();
-        name = intent.getStringExtra("Date");
+        name = intent.getStringExtra("Name");
         aDesc = intent.getStringExtra("Descipriton");
         aTute = intent.getStringExtra("Tutorial");
         aOwner = intent.getStringExtra("Owner");
