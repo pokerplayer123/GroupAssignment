@@ -23,23 +23,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <CalendarView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/calendarView2"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true" />
-
-            <TextView
-                android:text="Description:"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/calendarView2"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginBottom="22dp"
-                android:id="@+id/textView12" />
-
             <TextView
                 android:text="Tutorial:"
                 android:layout_width="wrap_content"
@@ -86,6 +69,56 @@
                 android:layout_below="@+id/activityTuteText"
                 android:layout_alignLeft="@+id/activityTuteText"
                 android:layout_alignStart="@+id/activityTuteText" />
+
+            <Button
+                android:text="Delete"
+                android:layout_height="wrap_content"
+                android:ems="8"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="14sp"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:background="@android:drawable/btn_default_small"
+                android:textColor="@android:color/background_light"
+                android:textStyle="normal|bold"
+                android:id="@+id/deleteEventButton"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/activityOwnerText"
+                android:layout_toEndOf="@+id/activityOwnerText"
+                android:layout_width="100dp" />
+
+            <TextView
+                android:text="Description:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView12"
+                android:layout_below="@+id/calendarView2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <CalendarView
+                android:layout_width="wrap_content"
+                android:id="@+id/calendarView2"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_height="300dp" />
+
+            <Button
+                android:text="Save Changes"
+                android:layout_height="wrap_content"
+                android:ems="8"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="14sp"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:background="@android:drawable/btn_default_small"
+                android:textColor="@android:color/background_light"
+                android:textStyle="normal|bold"
+                android:id="@+id/button4"
+                android:layout_width="100dp"
+                android:layout_alignParentBottom="true"
+                android:layout_toLeftOf="@+id/deleteEventButton"
+                android:layout_toStartOf="@+id/deleteEventButton" />
 
         </RelativeLayout>
 

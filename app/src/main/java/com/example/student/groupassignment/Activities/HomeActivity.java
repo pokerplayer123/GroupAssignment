@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.AbsListView;
 import android.widget.ListView;
@@ -83,6 +84,13 @@ public class HomeActivity  extends ListActivity implements View.OnClickListener 
                         }
                     });
                 }
+            }
+        });
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent EventDetailsActivity = new Intent(HomeActivity.this, EventDetailsActivity.class);
+                HomeActivity.this.startActivity(EventDetailsActivity);
             }
         });
 

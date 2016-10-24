@@ -29,8 +29,6 @@ public class EventAdapter extends ArrayAdapter<Event> {
         super( context, resource, eventList);
         mResource = resource;
         mInflater = (LayoutInflater) context.getSystemService( Context.LAYOUT_INFLATER_SERVICE);
-
-
     }
 
     @Override
@@ -46,9 +44,8 @@ public class EventAdapter extends ArrayAdapter<Event> {
         descriptionView.setText( item.getDescription());
 
         return view;
-
-
     }
+
 
 }
 
