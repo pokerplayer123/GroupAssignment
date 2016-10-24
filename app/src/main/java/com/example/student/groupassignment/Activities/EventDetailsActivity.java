@@ -40,7 +40,7 @@ public class EventDetailsActivity  extends AppCompatActivity {
 
         Intent intent = getIntent();
         name = intent.getStringExtra("Name");
-        aDesc = intent.getStringExtra("Descipriton");
+        aDesc = intent.getStringExtra("Description");
         aTute = intent.getStringExtra("Tutorial");
         aOwner = intent.getStringExtra("Owner");
         date = intent.getStringExtra("Date");
