@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:textSize="@dimen/abc_text_size_headline_material"
-        android:id="@+id/textView14" />
+        android:id="@+id/eventTitle" />
 
     <android.support.v7.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -35,21 +35,13 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/activityDescText"
-                android:layout_alignTop="@+id/textView12"
-                android:layout_centerHorizontal="true" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
+                android:inputType="text"
                 android:ems="10"
                 android:id="@+id/activityTuteText"
                 android:layout_below="@+id/activityDescText"
                 android:layout_alignLeft="@+id/activityDescText"
-                android:layout_alignStart="@+id/activityDescText" />
+                android:layout_alignStart="@+id/activityDescText"
+                android:text="Tutorial" />
 
             <TextView
                 android:text="Created By:"
@@ -63,12 +55,13 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"
                 android:ems="10"
                 android:id="@+id/activityOwnerText"
                 android:layout_below="@+id/activityTuteText"
                 android:layout_alignLeft="@+id/activityTuteText"
-                android:layout_alignStart="@+id/activityTuteText" />
+                android:layout_alignStart="@+id/activityTuteText"
+                android:inputType="text"
+                android:text="Owner" />
 
             <Button
                 android:text="Delete"
@@ -119,6 +112,16 @@
                 android:layout_alignParentBottom="true"
                 android:layout_toLeftOf="@+id/deleteEventButton"
                 android:layout_toStartOf="@+id/deleteEventButton" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:id="@+id/activityDescText"
+                android:layout_below="@+id/calendarView2"
+                android:layout_centerHorizontal="true"
+                android:text="Event Description" />
 
         </RelativeLayout>
 

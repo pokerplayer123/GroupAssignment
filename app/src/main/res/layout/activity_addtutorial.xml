@@ -53,14 +53,16 @@
             android:layout_height="wrap_content"
             android:text="Start Time"
             android:ems="10"
-            android:id="@+id/startTimeField" />
+            android:id="@+id/startTimeField"
+            android:inputType="datetime|date|time" />
 
         <EditText
             android:layout_width="142dp"
             android:layout_height="wrap_content"
             android:text="End Time"
             android:ems="10"
-            android:id="@+id/endTimeField" />
+            android:id="@+id/endTimeField"
+            android:inputType="datetime|date|time" />
 
     </GridLayout>
 

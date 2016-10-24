@@ -89,7 +89,13 @@ public class HomeActivity  extends ListActivity implements View.OnClickListener 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Event activity = adapter.getItem(position);
                 Intent EventDetailsActivity = new Intent(HomeActivity.this, EventDetailsActivity.class);
+                EventDetailsActivity.putExtra("Name", activity.getName());
+                EventDetailsActivity.putExtra("Date", activity.getEventTime());
+                EventDetailsActivity.putExtra("Description", activity.getDescription());
+                EventDetailsActivity.putExtra("Tutorial", activity.getTutorial().getTutorial());
+                EventDetailsActivity.putExtra("Owner", activity.getOwnerId());
                 HomeActivity.this.startActivity(EventDetailsActivity);
             }
         });
