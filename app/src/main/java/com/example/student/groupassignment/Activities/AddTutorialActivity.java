@@ -61,35 +61,14 @@ public class AddTutorialActivity  extends AppCompatActivity  implements View.OnC
 
         switch (view.getId()) {
             case R.id.addTuteButton:
-                Tutorial tute = new Tutorial();
-                tute.setDescription(description.getText().toString());
-                tute.setTutorial(name.getText().toString());
-
-                SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
-                Date date = null;
-                try {
-                    date = sdf.parse(startTime.getText().toString());
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-                tute.setTime(date);
-                Backendless.Persistence.of(Tutorial.class).save(tute, new AsyncCallback<Tutorial>(){
-                    public void handleResponse( Tutorial responnse )
-                    {
-                    // new Contact instance has been saved
-                    }
-
-                    public void handleFault( BackendlessFault fault )
-                    {
-                    // an error has occurred, the error code can be retrieved with fault.getCode()
-                        fault.getCode();
-                    }
-            });
+                addTutorial();
+                Intent i = new Intent(this, HomeActivity.class);
+                startActivity(i);
                 break;
             case R.id.startTimeField:
                 //Calendar mcurrentTime = Calendar.getInstance();
                 //int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
-               // int minute = mcurrentTime.get(Calendar.MINUTE);
+                // int minute = mcurrentTime.get(Calendar.MINUTE);
                 TimePickerDialog mTimePicker;
                 mTimePicker = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
@@ -112,5 +91,36 @@ public class AddTutorialActivity  extends AppCompatActivity  implements View.OnC
                 break;
 
         }
+    }
+
+    public void addTutorial()
+    {
+        Tutorial Tutorial = new Tutorial();
+        String desc = description.getText().toString();
+        String tutorialName = name.getText().toString();
+        Tutorial.setDescription(desc);
+        Tutorial.setTutorial(tutorialName);
+
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+        Date date = null;
+        try {
+            date = sdf.parse(startTime.getText().toString());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Tutorial.setTime(date);
+
+        Backendless.Persistence.save(Tutorial, new AsyncCallback<com.example.student.groupassignment.entities.Tutorial>() {
+            @Override
+            public void handleResponse(Tutorial response) {
+
+            }
+
+            @Override
+            public void handleFault(BackendlessFault fault) {
+
+            }
+        });
+
     }
 }
