@@ -16,6 +16,12 @@
         android:textSize="@dimen/abc_text_size_headline_material"
         android:id="@+id/homeTitle" />
 
+    <TextView
+        android:text="View Classes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView" />
+
     <ImageButton
         android:layout_width="match_parent"
         android:layout_height="64sp"
@@ -23,7 +29,7 @@
         android:id="@+id/classButton" />
 
     <TextView
-        android:text="Manage Classes"
+        android:text="View Students"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView2" />
@@ -36,7 +42,7 @@
         android:id="@+id/studentButton" />
 
     <TextView
-        android:text="Manage Students"
+        android:text="Add Event"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView3" />
