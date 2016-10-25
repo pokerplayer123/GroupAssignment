@@ -26,7 +26,7 @@ import java.util.List;
 
 public class TutorialActivity extends AppCompatActivity {
     private Button addClass;
-    private BackendlessCollection<Tutorial> tutes;
+    private BackendlessCollection<Tutorial> Tutorial;
     private TutorialAdapter adapter;
     private List<Tutorial> list= new ArrayList<>();
     private boolean isLoadingItems = false;
@@ -51,7 +51,7 @@ public class TutorialActivity extends AppCompatActivity {
         Backendless.Persistence.of(Tutorial.class).find(query, new LoadingCallback<BackendlessCollection<Tutorial>>(this, getString(R.string.loading_students)) {
             @Override
             public void handleResponse(BackendlessCollection<Tutorial> tuteBackendlessCollection) {
-                tutes = tuteBackendlessCollection;
+                Tutorial = tuteBackendlessCollection;
                 addMoreItems(tuteBackendlessCollection);
 
 

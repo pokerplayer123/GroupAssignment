@@ -49,8 +49,8 @@ public class Tutorial
     return updated;
   }
 
-  public void setTutorial(String tutorial) {
-    Tutorial = tutorial;
+  public void setTutorial(String Tutorial) {
+    Tutorial = Tutorial;
   }
 
   public String getTutorial()
